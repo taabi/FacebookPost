@@ -7,12 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#import "PostViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    PostViewController *vc = [[PostViewController alloc]init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nvc;
+    // making navigation bar transparent PostViewController
+    
+    [nvc.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    nvc.navigationBar.shadowImage = [UIImage new];
+    nvc.navigationBar.translucent = YES;
+    
+    // setting navbar title style PostViewController
+    
+    NSDictionary *PostTextAttributes =
+    @{
+      NSFontAttributeName : [UIFont boldSystemFontOfSize:18],
+      NSForegroundColorAttributeName : [UIColor colorWithRed:1 green:1 blue:1 alpha:1],
+      };
+    
+    nvc.navigationBar.titleTextAttributes = PostTextAttributes;
+
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
