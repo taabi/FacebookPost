@@ -9,6 +9,8 @@
 #import "PostViewController.h"
 
 @interface PostViewController ()
+@property (weak, nonatomic) IBOutlet UIView *WhiteContainerView;
+@property (weak, nonatomic) IBOutlet UIView *ActionsView;
 
 @end
 
@@ -29,6 +31,16 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationItem.title = @"Post";
+    
+    // post container styling
+    
+    self.WhiteContainerView.layer.cornerRadius = 3;
+    self.WhiteContainerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.WhiteContainerView.layer.shadowOffset = CGSizeMake(0, 0);
+    self.WhiteContainerView.layer.shadowOpacity = 0.2;
+    self.WhiteContainerView.layer.shadowRadius = 1;
+    
+
     
     // Do any additional setup after loading the view from its nib.
 }
