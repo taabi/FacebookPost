@@ -21,6 +21,8 @@
 		131C77011956A31400CFA750 /* FacebookPostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 131C77001956A31400CFA750 /* FacebookPostTests.m */; };
 		131C770D1956A35000CFA750 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131C770B1956A35000CFA750 /* PostViewController.m */; };
 		131C770E1956A35000CFA750 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131C770C1956A35000CFA750 /* PostViewController.xib */; };
+		13A36A5319580C8D00920AAC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A36A5119580C8D00920AAC /* PhotoViewController.m */; };
+		13A36A5419580C8D00920AAC /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A36A5219580C8D00920AAC /* PhotoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		131C770A1956A35000CFA750 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		131C770B1956A35000CFA750 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		131C770C1956A35000CFA750 /* PostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+		13A36A5019580C8D00920AAC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		13A36A5119580C8D00920AAC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		13A36A5219580C8D00920AAC /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				131C770A1956A35000CFA750 /* PostViewController.h */,
 				131C770B1956A35000CFA750 /* PostViewController.m */,
 				131C770C1956A35000CFA750 /* PostViewController.xib */,
+				13A36A5019580C8D00920AAC /* PhotoViewController.h */,
+				13A36A5119580C8D00920AAC /* PhotoViewController.m */,
+				13A36A5219580C8D00920AAC /* PhotoViewController.xib */,
 			);
 			path = FacebookPost;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131C76E61956A31400CFA750 /* InfoPlist.strings in Resources */,
+				13A36A5419580C8D00920AAC /* PhotoViewController.xib in Resources */,
 				131C76EE1956A31400CFA750 /* Images.xcassets in Resources */,
 				131C770E1956A35000CFA750 /* PostViewController.xib in Resources */,
 			);
@@ -249,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131C76EC1956A31400CFA750 /* AppDelegate.m in Sources */,
+				13A36A5319580C8D00920AAC /* PhotoViewController.m in Sources */,
 				131C76E81956A31400CFA750 /* main.m in Sources */,
 				131C770D1956A35000CFA750 /* PostViewController.m in Sources */,
 			);
@@ -449,6 +459,7 @@
 				131C77061956A31400CFA750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		131C77071956A31400CFA750 /* Build configuration list for PBXNativeTarget "FacebookPostTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +468,7 @@
 				131C77091956A31400CFA750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
