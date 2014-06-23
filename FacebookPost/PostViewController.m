@@ -20,6 +20,8 @@
 - (IBAction)ViewButton:(id)sender;
 - (void) onLeftButton;
 - (void) onRightButton;
+- (IBAction)onEditAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *InputContainerView;
 
 @end
 
@@ -102,6 +104,9 @@
 
 - (IBAction)ViewButton:(id)sender {
     [self.view endEditing:YES];
+    [UIView animateWithDuration:0.3 animations:^{self.InputContainerView.frame = CGRectMake(self.InputContainerView.frame.origin.x, 420
+                                                                                           , self.InputContainerView.frame.size.width, self.InputContainerView.frame.size.height);} ];
+    
 }
 
 - (void) onLeftButton{
@@ -109,6 +114,14 @@
 }
 
 - (void) onRightButton{
+    
+}
+
+- (IBAction)onEditAction:(id)sender {
+    [UIView animateWithDuration:0.3 animations:^{self.InputContainerView.frame = CGRectMake(self.InputContainerView.frame.origin.x, 245
+                                                                                            , self.InputContainerView.frame.size.width, self.InputContainerView.frame.size.height);} ];
+    
+    
     
 }
 @end
