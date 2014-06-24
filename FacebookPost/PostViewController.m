@@ -8,6 +8,7 @@
 
 #import "PostViewController.h"
 #import "PhotoViewController.h"
+#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @interface PostViewController ()
 @property (weak, nonatomic) IBOutlet UIView *WhiteContainerView;
@@ -71,7 +72,42 @@
     UIImage *rightButtonImage = [[UIImage imageNamed:@"share_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:rightButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(onRightButton)];
     self.navigationItem.rightBarButtonItem = rightButton;
-   
+    
+    
+    //TTT
+    
+    TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(166,50,280,130)];
+    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor darkGrayColor];
+    label.lineBreakMode = UILineBreakModeWordWrap;
+    label.numberOfLines = 4;
+    
+    NSString *text = @" http://bit.ly/1rev2";
+    
+    label.enabledTextCheckingTypes = NSTextCheckingTypeLink; // Automatically detect links when the label text is subsequently changed
+    label.delegate = self; // Delegate methods are called when the user taps on a link (see `TTTAttributedLabelDelegate` protocol)
+    
+    
+    
+    NSRange range = [label.text rangeOfString:@"me"];
+    [label addLinkToURL:[NSURL URLWithString:@"http://www.google.com"] withRange:range]; // Embedding a custom link in a substring
+    
+    [label setText:text afterInheritingLabelAttributesAndConfiguringWithBlock:^ NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+        NSRange boldRange = [[mutableAttributedString string] rangeOfString:@"ipsum dolar" options:NSCaseInsensitiveSearch];
+        NSRange strikeRange = [[mutableAttributedString string] rangeOfString:@"sit amet" options:NSCaseInsensitiveSearch];
+        
+        // Core Text APIs use C functions without a direct bridge to UIFont. See Apple's "Core Text Programming Guide" to learn how to configure string attributes.
+        UIFont *boldSystemFont = [UIFont boldSystemFontOfSize:14];
+        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)boldSystemFont.fontName, boldSystemFont.pointSize, NULL);
+        if (font) {
+            [mutableAttributedString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)font range:boldRange];
+            [mutableAttributedString addAttribute:kTTTStrikeOutAttributeName value:[NSNumber numberWithBool:YES] range:strikeRange];
+            CFRelease(font);
+        }
+        
+        return mutableAttributedString;
+    }];
+    [self.WhiteContainerView addSubview:label];
 
     
 

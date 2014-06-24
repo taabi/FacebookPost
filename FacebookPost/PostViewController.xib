@@ -119,7 +119,7 @@
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2.2000000000000002"/>
                                             </attributes>
                                         </fragment>
-                                        <fragment content=" http://bit.ly/1rev2">
+                                        <fragment content=" ">
                                             <attributes>
                                                 <color key="NSColor" red="0.38431372549019605" green="0.47058823529411764" blue="0.66274509803921566" alpha="1" colorSpace="deviceRGB"/>
                                                 <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
